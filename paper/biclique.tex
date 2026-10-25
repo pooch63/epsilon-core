@@ -1,0 +1,62 @@
+\begin{figure}[!t]
+    \centering
+    \begin{tikzpicture}[
+        vertex/.style={
+            circle,
+            draw,
+            minimum size=6mm,
+            inner sep=0pt,
+            line width=0.6pt
+        },
+        leftvertex/.style={
+            vertex,
+            fill=blue!18,
+            draw=blue!60!black
+        },
+        rightvertex/.style={
+            vertex,
+            fill=orange!20,
+            draw=orange!70!black
+        },
+        node distance=10mm and 28mm
+    ]
+
+        % Users
+        \node[leftvertex] (u1) {};
+        \node[leftvertex, below=of u1] (u2) {};
+        \node[leftvertex, below=of u2] (u3) {};
+
+        \node[left=3mm of u1] {\small Alice};
+        \node[left=3mm of u2] {\small Bob};
+        \node[left=3mm of u3] {\small Carol};
+
+        % Products
+        \node[rightvertex, right=of u1] (p1) {};
+        \node[rightvertex, below=of p1] (p2) {};
+        \node[rightvertex, below=of p2] (p3) {};
+
+        \node[right=3mm of p1] {\small Laptop};
+        \node[right=3mm of p2] {\small Headphones};
+        \node[right=3mm of p3] {\small Keyboard};
+
+        % Complete 3x3 biclique
+        \draw (u1) -- (p1);
+        \draw (u1) -- (p2);
+        \draw (u1) -- (p3);
+
+        \draw (u2) -- (p1);
+        \draw (u2) -- (p2);
+        \draw (u2) -- (p3);
+
+        \draw (u3) -- (p1);
+        \draw (u3) -- (p2);
+        \draw (u3) -- (p3);
+
+        % Part labels
+        \node[above=3mm of u1] {\small Users};
+        \node[above=3mm of p1] {\small Products};
+
+    \end{tikzpicture}
+    \caption{The $3\times3$ biclique contained within Figure~\ref{fig:bipartite-example}. Every user is connected to every product in the biclique.}
+    \label{fig:biclique-example}
+\end{figure}

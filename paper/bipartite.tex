@@ -1,0 +1,73 @@
+
+\begin{figure}[!t]
+    \centering
+    \begin{tikzpicture}[
+        vertex/.style={
+            circle,
+            draw,
+            minimum size=6mm,
+            inner sep=0pt,
+            line width=0.6pt
+        },
+        leftvertex/.style={
+            vertex,
+            fill=blue!18,
+            draw=blue!60!black
+        },
+        rightvertex/.style={
+            vertex,
+            fill=orange!20,
+            draw=orange!70!black
+        },
+        node distance=9mm and 25mm
+    ]
+
+        % Users
+        \node[leftvertex] (u1) {};
+        \node[leftvertex, below=of u1] (u2) {};
+        \node[leftvertex, below=of u2] (u3) {};
+        \node[leftvertex, below=of u3] (u4) {};
+
+        % User labels
+        \node[left=3mm of u1] {\small Alice};
+        \node[left=3mm of u2] {\small Bob};
+        \node[left=3mm of u3] {\small Carol};
+        \node[left=3mm of u4] {\small David};
+
+        % Products
+        \node[rightvertex, right=of u1] (p1) {};
+        \node[rightvertex, below=of p1] (p2) {};
+        \node[rightvertex, below=of p2] (p3) {};
+        \node[rightvertex, below=of p3] (p4) {};
+
+        % Product labels
+        \node[right=3mm of p1] {\small Laptop};
+        \node[right=3mm of p2] {\small Headphones};
+        \node[right=3mm of p3] {\small Keyboard};
+        \node[right=3mm of p4] {\small Camera};
+
+        % Edges forming a 3x3 biclique
+        \draw (u1) -- (p1);
+        \draw (u1) -- (p2);
+        \draw (u1) -- (p3);
+
+        \draw (u2) -- (p1);
+        \draw (u2) -- (p2);
+        \draw (u2) -- (p3);
+
+        \draw (u3) -- (p1);
+        \draw (u3) -- (p2);
+        \draw (u3) -- (p3);
+
+        % Additional edges outside the biclique
+        \draw (u4) -- (p2);
+        \draw (u4) -- (p4);
+
+        % Part labels
+        \node[above=3mm of u1] {\small Users};
+        \node[above=3mm of p1] {\small Products};
+
+    \end{tikzpicture}
+    \caption{A bipartite user-product graph. Alice, Bob, and Carol each purchased the same three products, forming a $3\times3$ biclique, while David has a different set of purchases.}
+    \label{fig:bipartite-example}
+\end{figure}

@@ -1,0 +1,5 @@
+*
+!.gitignore
+!.dataignore
+!*.sh
+!*.txt

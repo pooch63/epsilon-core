@@ -1,0 +1,19 @@
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocodex}
+
+\title{Algorithm Idea Dump for $\epsilon$-Cohesive Core}
+\author{Kiyaan Pillai}
+
+\section{Reductions}
+
+\begin{enumerate}
+    \item Remove all left-side nodes with degree $< \theta$ for a maximum number of iterations
+    \item 
+\end{enumerate}
+
+\section{Small Graph ($\le 3 \times 10^4$)}
+
+Build a graph $H$ with vertices equal to the vertices in $R$ and an edge between vertices that are similar.
+
+Need an algorithm that finds the largest group using a specific user, and one that's tailored for 0.1-1M graphs, 10-100M size graphs ($O(V\log V)$), and even 10B+ size groups ($O(V + E)$).

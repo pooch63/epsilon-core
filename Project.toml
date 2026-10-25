@@ -1,0 +1,5 @@
+[deps]
+GraphLogic = "a2a61bff-f2f4-439e-ada3-be193e9896fb"
+
+[sources]
+GraphLogic = {path = "../graph-logic"}
