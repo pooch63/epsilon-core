@@ -67,10 +67,10 @@ isdefined(@__MODULE__, :shortest_path_metric) || include(joinpath(@__DIR__, "sp.
 """
     similarity_reduce!(h, g, theta) -> NamedTuple
 
-Delete every vertex of the similarity graph `h` whose degree is `< theta`.
+Delete every vertex of the similarity graph `h` whose degree is `< theta - 1`.
 Those vertices are the right side of `g`. A sweep reads degrees as they stand
 at the start, then deletes; the next sweep sees the edges that deletion
-removed. Repeats until every remaining vertex has degree ≥ `theta`. Each
+removed. Repeats until every remaining vertex has degree ≥ `theta - 1`. Each
 deleted vertex is removed from `h` and from the right side of `g`. The
 distance metric is not run again.
 """
@@ -81,7 +81,7 @@ function similarity_reduce!(h::UnipartiteGraph, g::BipartiteGraph, theta::Int)
     while true
         drop = Int[]
         for (v, nbrs) in h.adj
-            length(nbrs) < theta && push!(drop, v)
+            length(nbrs) < theta - 1 && push!(drop, v)
         end
         isempty(drop) && break
         sweeps += 1
