@@ -9,7 +9,7 @@ not an exact maximum. These checks pin the degree rule, the two-phase
 search, and the choice of the larger orientation.
 =#
 
-include(joinpath(@__DIR__, "..", "src", "vertex-quasi.jl"))
+include(joinpath(@__DIR__, "..", "src", "formulations", "vertex-quasi.jl"))
 
 using Test
 

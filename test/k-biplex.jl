@@ -5,7 +5,7 @@ search on tiny graphs.
   julia --project=. test/k-biplex.jl
 =#
 
-include(joinpath(@__DIR__, "..", "src", "k-biplex.jl"))
+include(joinpath(@__DIR__, "..", "src", "formulations", "k-biplex.jl"))
 
 using Random
 using Test

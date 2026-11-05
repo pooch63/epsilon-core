@@ -16,7 +16,7 @@ vertex. Both sides must have at least theta vertices. The search does not
 mutate g.
 =#
 
-isdefined(@__MODULE__, :__CORE_JL__) || include(joinpath(@__DIR__, "core.jl"))
+isdefined(@__MODULE__, :__CORE_JL__) || include(joinpath(@__DIR__, "..", "core.jl"))
 
 """
     is_k_biplex(g, left, right, k) -> Bool

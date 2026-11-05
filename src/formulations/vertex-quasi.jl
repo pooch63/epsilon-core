@@ -19,7 +19,7 @@ the sides swapped, and the larger pair is kept. `g` is not mutated.
   julia --project=. test/vertex-quasi.jl
 =#
 
-isdefined(@__MODULE__, :__CORE_JL__) || include(joinpath(@__DIR__, "core.jl"))
+isdefined(@__MODULE__, :__CORE_JL__) || include(joinpath(@__DIR__, "..", "core.jl"))
 
 function _require_delta(delta::Real)
     if !(delta >= 0 && delta <= 0.5 && isfinite(delta))
