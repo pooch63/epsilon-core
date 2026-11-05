@@ -2,6 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{hyperref}
 
 \title{Plan for $\epsilon$-Cohesive Core ($\epsilon$-CC) Research}
@@ -41,6 +42,73 @@ For graphs where I don't need ground-truth communities, I can use the following:
     \item Amazon review graphs at \url{https://amazon-reviews-2023.github.io/}
     \item Yelp Open Data at \url{https://business.yelp.com/data/resources/open-dataset/}
 \end{itemize}
+
+Table~\ref{tab:suite} is the downloaded suite in \texttt{data/datasets.txt}. $|U|$ and $|V|$ are the two sides of each indexed bipartite graph. $|E|$ counts distinct edges, so repeated interaction rows are counted once. Density is $|E|/(|U||V|)$.
+
+\begin{longtable}{lrrrr}
+\caption{Graphs in the evaluation suite.}
+\label{tab:suite}\\
+\toprule
+Graph & $|U|$ & $|V|$ & $|E|$ & Density \\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+Graph & $|U|$ & $|V|$ & $|E|$ & Density \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\multicolumn{5}{l}{KONECT (small)} \\
+\midrule
+moreno & 888 & 1{,}597 & 2{,}277 & $1.61\times 10^{-3}$ \\
+facebook & 28 & 2{,}885 & 2{,}981 & $3.69\times 10^{-2}$ \\
+urwiki & 6{,}883 & 671{,}239 & 1{,}611{,}787 & $3.49\times 10^{-4}$ \\
+maayan-vidal & 1{,}633 & 2{,}929 & 6{,}726 & $1.41\times 10^{-3}$ \\
+edit-zuwiktionary & 214 & 1{,}404 & 4{,}175 & $1.39\times 10^{-2}$ \\
+edit-srwikiquote & 402 & 1{,}823 & 4{,}784 & $6.53\times 10^{-3}$ \\
+edit-vewiki & 543 & 1{,}532 & 5{,}178 & $6.22\times 10^{-3}$ \\
+edit-guwikiquote & 963 & 1{,}678 & 5{,}502 & $3.40\times 10^{-3}$ \\
+dnc-corecipient & 653 & 714 & 12{,}085 & $2.59\times 10^{-2}$ \\
+nawiki & 844 & 4{,}014 & 25{,}917 & $7.65\times 10^{-3}$ \\
+moreno\_health & 2{,}313 & 2{,}441 & 12{,}969 & $2.30\times 10^{-3}$ \\
+edit-mkwikisource & 218 & 6{,}635 & 7{,}728 & $5.34\times 10^{-3}$ \\
+edit-mrwiktionary & 281 & 3{,}995 & 8{,}499 & $7.57\times 10^{-3}$ \\
+petster-hamster & 2{,}244 & 1{,}766 & 16{,}631 & $4.20\times 10^{-3}$ \\
+edit-nowikinews & 430 & 4{,}060 & 8{,}891 & $5.09\times 10^{-3}$ \\
+edit-jamwiki & 177 & 2{,}741 & 10{,}389 & $2.14\times 10^{-2}$ \\
+edit-wowiktionary & 193 & 3{,}646 & 9{,}921 & $1.41\times 10^{-2}$ \\
+edit-rowikibooks & 443 & 4{,}221 & 6{,}974 & $3.73\times 10^{-3}$ \\
+moreno\_blogs & 1{,}065 & 990 & 19{,}025 & $1.80\times 10^{-2}$ \\
+p2p-Gnutella09 & 3{,}055 & 8{,}038 & 26{,}013 & $1.06\times 10^{-3}$ \\
+\midrule
+\multicolumn{5}{l}{KONECT} \\
+\midrule
+bitcoin & 3{,}286 & 3{,}754 & 24{,}186 & $1.96\times 10^{-3}$ \\
+pgp-arenas & 5{,}596 & 9{,}657 & 24{,}316 & $4.50\times 10^{-4}$ \\
+wiki\_talk\_nds & 605 & 23{,}094 & 24{,}668 & $1.77\times 10^{-3}$ \\
+openflights & 3{,}409 & 3{,}418 & 37{,}595 & $3.23\times 10^{-3}$ \\
+dimacs-polblogs & 1{,}224 & 1{,}224 & 33{,}430 & $2.23\times 10^{-2}$ \\
+gnutella & 4{,}935 & 10{,}856 & 39{,}994 & $7.47\times 10^{-4}$ \\
+ciaodvd & 1{,}438 & 4{,}299 & 40{,}133 & $6.49\times 10^{-3}$ \\
+dblp\_cite & 3{,}158 & 11{,}566 & 49{,}759 & $1.36\times 10^{-3}$ \\
+matter & 16{,}726 & 22{,}015 & 58{,}595 & $1.59\times 10^{-4}$ \\
+eswiki & 953{,}483 & 5{,}857{,}091 & 30{,}591{,}134 & $5.48\times 10^{-6}$ \\
+\midrule
+\multicolumn{5}{l}{Amazon} \\
+\midrule
+boxes & 15{,}237 & 1{,}128 & 16{,}016 & $9.32\times 10^{-4}$ \\
+music & 100{,}952 & 70{,}519 & 128{,}764 & $1.81\times 10^{-5}$ \\
+appliances & 1{,}755{,}732 & 104{,}237 & 2{,}105{,}948 & $1.15\times 10^{-5}$ \\
+gift-cards & 132{,}732 & 1{,}894 & 150{,}989 & $6.01\times 10^{-4}$ \\
+health & 461{,}656 & 62{,}597 & 488{,}990 & $1.69\times 10^{-5}$ \\
+software & 2{,}589{,}466 & 90{,}359 & 4{,}829{,}120 & $2.06\times 10^{-5}$ \\
+movies & 6{,}503{,}429 & 747{,}910 & 17{,}158{,}548 & $3.53\times 10^{-6}$ \\
+beauty & 631{,}986 & 115{,}709 & 694{,}252 & $9.49\times 10^{-6}$ \\
+magazine & 60{,}144 & 3{,}391 & 70{,}922 & $3.48\times 10^{-4}$ \\
+fashion & 2{,}035{,}490 & 874{,}297 & 2{,}475{,}694 & $1.39\times 10^{-6}$ \\
+instruments & 1{,}762{,}679 & 259{,}791 & 2{,}983{,}780 & $6.52\times 10^{-6}$ \\
+\end{longtable}
 
 \subsection{Comparing to Other Formulations}
 
